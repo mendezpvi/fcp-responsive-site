@@ -1,0 +1,235 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body, h1, h2, h3, p, ul {
+    margin: 0;
+}
+
+p {
+    line-height: 1.5;
+}
+
+ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+img {
+    max-inline-size: 100%;
+    block-size: 100%;
+    font-style: italic;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+:root {
+    --clr-1: #F0F0F0;
+    --clr-2: #008DDA;
+    --clr-3: #41C9E2;
+    --clr-4: #ACE2E1;
+    --clr-5: #F7EEDD;
+    --clr-6: #0f0f0f;
+}
+
+
+body {
+    min-block-size: 100vh;
+    min-block-size: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    font-family: 'Signika', sans-serif;
+}
+
+/* Layout */
+
+.container {
+    margin-inline: auto;
+    inline-size: 90vw;
+    min-inline-size: 320px;
+    max-inline-size: 700px;
+}
+
+.header,
+.attribution {
+    text-align: center;
+    background-color: var(--clr-2);
+    color: var(--clr-1);
+}
+
+.header {
+    padding: 2em 0 1em;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.main {
+    padding-block: 1.5em;
+    background-color: var(--clr-5);
+}
+
+/* Menu */
+
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-cta {
+    display: block;
+    padding: .8em 1.2em;
+}
+
+/* Typography */
+
+.header-heading {
+    font-size: 2.5rem;
+}
+
+.header-subheading {
+    font-size: 1.15rem;
+    color: var(--clr-6);
+}
+
+.info-heading {
+    margin-bottom: .5em;
+    font-size: 2rem;
+}
+
+.attribution {
+    padding-block: 1em;
+    font-size: .8rem;
+}
+
+.attribution-cta {
+    padding: .25em .5em;
+    border-radius: 3px;
+    text-decoration: underline wavy;
+    text-underline-offset: 2px;
+}
+
+.header-heading,
+.menu,
+.option-btn,
+.attribution {
+    text-shadow: 0 0 2px var(--clr-6);
+}
+
+/* Image */
+
+.info-pic {
+    margin-bottom: 2em;
+    border-radius: 5px;
+}
+
+/* Buttons */
+
+.buttons {
+    margin-top: 1.5em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8em;
+}
+
+.btn {
+    padding: .6em 1.2em;
+    inline-size: 100%;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.option-btn {
+    background-color: var(--clr-2);
+    color: var(--clr-1);
+}
+
+.about-btn {
+    background-color: var(--clr-4);
+    color: var(--clr-6);
+}
+
+.btn,
+.menu-cta,
+.attribution-cta {
+    transition: background-color .3s ease;
+}
+
+/* Media Queries */
+
+@media (width < 768px) {
+    .menu-item:not(:last-child) {
+        border-bottom: 1px solid var(--clr-5);
+    }
+}
+
+@media (width >= 768px) {
+    .header {
+        text-align: left;
+    }
+
+    .header-container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .nav {
+        margin-left: auto;
+    }
+
+    .menu {
+        flex-direction: row;
+    }
+
+    .buttons {
+        flex-wrap: nowrap;
+    }
+
+    .btn {
+        inline-size: initial;
+    }
+}
+
+/* States */
+
+.btn:focus-visible,
+.attribution-cta:focus-visible {
+    background-color: var(--clr-6);
+    color: var(--clr-1);
+    text-decoration: none;
+}
+
+.menu-cta:focus-visible {
+    background-color: hsl(from var(--clr-4) h s l/.3);
+}
+
+@media (hover:hover) {
+    .menu-cta:hover {
+        background-color: hsl(from var(--clr-4) h s l/.3);
+    }
+
+    .btn:hover,
+    .attribution-cta:hover {
+        background-color: var(--clr-6);
+        color: var(--clr-1);
+        text-decoration: none;
+    }
+}
